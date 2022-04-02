@@ -1,0 +1,232 @@
+!! COLORS
+!!_____________________________________________________________
+!#define BACKGROUND   #000000
+!#define FOREGROUND   #22ff22
+
+!*color0:       darkmagenta
+!*color2:       cyan
+!*color3:       green
+
+!*color4:       lightmagenta
+!!*color5:       #444444
+!*color6:       #00ffff
+
+!*color7:       #ffffff
+!*color8:       #00ff5f
+!*color9:       #ff5555
+
+*color10:      #55ff55
+!*color11:      #ffff55
+!*color12:      #5555ff
+
+!*color13:      #ffaaff
+!*color14:     #ffff55
+!*color15:      #ffffff
+
+!#define gray         #555555
+!#define gray1        #aaaaaa
+
+
+!! THEME
+!!____________________________________________________________
+#define theme 3
+#define dark  1
+!! TERMINAL
+!!_____________________________________________________________
+#if dark == 0
+#if theme == 0
+URxvt.foreground: #00ffff
+#endif
+#else
+URxvt.foreground: #555555
+#endif
+#if dark == 0
+#if theme == 1
+URxvt.foreground: #ff00ff
+#endif
+#else
+URxvt.foreground: #555555
+#endif
+URxvt.background: #000000
+*.scrollBar: false
+URxvt.font:     *-fixed-*-*-*-18-*
+
+
+#if dark == 0
+#if theme == 3
+URxvt.foreground: #00ffff
+#endif
+#else
+URxvt.foreground: #555555
+#endif
+
+
+!URxvt.font:              xft:inconsolata:pixelsize=12
+
+!URxvt.font: xft:RobotoMono Nerd Font:medium:pixelsize=14
+!URxvt.boldFont: xft:RobotoMono Nerd Font:bold:pixelsize=14
+!URxvt.italicFont: xft:RobotoMono Nerd Font:italic:pixelsize=14
+!URxvt.boldItalicFont: xft:RobotoMono Nerd Font:bold:italic:pixelsize=14
+
+!URxvt.font:             xft:Cantarell11
+!URxvt.boldFont:         xft:Cantarell11  
+URxvt.highlightColor: #222222
+
+*.foreground: white
+*.background: black
+*.font:     *-fixed-*-*-*-18-*
+
+
+!! DWM
+!!_____________________________________________________________
+#if theme == 0
+!! glow in dark
+*.selbordercolor: #00ffff
+*.selfgcolor:     #00ffff
+*.normbordercolor:#00ff55
+*.normbgcolor:    #121212
+*.selbgcolor:     #121212
+*.normfgcolor:    #00ff55
+!! window config
+!!*.nmaster:        1
+!!*.resizehints:    0
+!!*.mfact:          0.50
+!!*.lockfullscreen: 1
+*.barname: Amorgos
+#endif
+#if theme == 1
+!! lean
+*.selbordercolor: #ffaaff
+*.selfgcolor:     #ffaaff
+*.normbordercolor:#ff00ff
+*.normbgcolor:    #121212
+*.selbgcolor:     #121212
+*.normfgcolor:    #ff00ff
+!!*.barname:         LEAN WINDOW MANAGER
+*.barname: Amorgos
+#endif
+
+#if theme == 3   
+
+*.selbordercolor: #00ffff                               
+*.selfgcolor:     #00ffff                               
+*.normbordercolor:#ff00ff                               
+*.normbgcolor:    #121212                               
+*.selbgcolor:     #121212                               
+*.normfgcolor:    #ff00ff 
+*.barname:        Drip
+#endif 
+
+!!*.barname: Amorgos
+
+!! XDM
+!!____________________________________________________________
+
+Xcursor.theme: whiteglass
+
+xlogin*login.translations: #override \
+	Ctrl<Key>R: abort-display()\n\
+	<Key>F1: set-session-argument(failsafe) finish-field()\n\
+	<Key>Delete: delete-character()\n\
+	<Key>Left: move-backward-character()\n\
+	<Key>Right: move-forward-character()\n\
+	<Key>Home: move-to-begining()\n\
+	<Key>End: move-to-end()\n\
+	Ctrl<Key>KP_Enter: set-session-argument(failsafe) finish-field()\n\
+	<Key>KP_Enter: set-session-argument() finish-field()\n\
+Ctrl<Key>Return: set-session-argument(failsafe) finish-field()\n\
+	<Key>Return: set-session-argument() finish-field()
+
+xlogin*greeting:  CLIENTHOST
+xlogin*namePrompt: \040\040\040\040\040\040\040\Login:
+!!xlogin*fail: Login incorrect or forbidden by policy
+xlogin*fail: noob
+
+#if WIDTH > 800
+xlogin*greetFont: -adobe-helvetica-bold-o-normal--24-240-75-75-p-138-iso8859-1
+xlogin*font: -adobe-helvetica-medium-r-normal--18-180-75-75-p-98-iso8859-1
+xlogin*promptFont: -adobe-helvetica-bold-r-normal--18-180-75-75-p-103-iso8859-1
+xlogin*failFont: -adobe-helvetica-bold-r-normal--18-180-75-75-p-103-iso8859-1
+xlogin*greetFace:	Serif-24:bold:italic
+xlogin*face: 		Helvetica-18
+xlogin*promptFace: 	Helvetica-18:bold
+xlogin*failFace: 	Helvetica-18:bold
+#else
+xlogin*greetFont: -adobe-helvetica-bold-o-normal--17-120-100-100-p-92-iso8859-1
+xlogin*font: -adobe-helvetica-medium-r-normal--12-120-75-75-p-67-iso8859-1
+xlogin*promptFont: -adobe-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1
+xlogin*failFont: -adobe-helvetica-bold-o-normal--14-140-75-75-p-82-iso8859-1
+xlogin*greetFace:	Serif-18:bold:italic
+xlogin*face:		Helvetica-12
+xlogin*promptFace:	Helvetica-12:bold
+xlogin*failFace:	Helvetica-14:bold
+#endif
+
+#if theme == 0
+xlogin*borderWidth: 5
+xlogin*frameWidth: 3
+xlogin*innerFramesWidth: 0
+xlogin*shdColor: #00ff55
+xlogin*hiColor: #00ff77
+xlogin*background: #000000
+xlogin*inpColor: #222222
+!xlogin*foreground: darkgreen
+xlogin*greetColor: #00ffff
+xlogin*failColor: red
+xlogin*Foreground: #00ffff
+xlogin*Background: #000000
+#endif
+#if theme == 1
+xlogin*borderWidth: 5
+xlogin*frameWidth: 3
+xlogin*innerFramesWidth: 0
+xlogin*shdColor: #ff55ff
+xlogin*hiColor: #ffaaff
+xlogin*background: #000000
+xlogin*inpColor: #222222
+!xlogin*foreground: darkgreen
+xlogin*greetColor: #ff00ff
+xlogin*failColor: red
+xlogin*Foreground: #ff00ff
+xlogin*Background: #000000
+#endif
+
+
+
+
+#if theme == 3
+xlogin*borderWidth: 5
+xlogin*frameWidth: 3
+xlogin*innerFramesWidth: 0
+xlogin*shdColor: #ff55ff
+xlogin*hiColor: #ff00ff
+xlogin*background: #000000
+xlogin*inpColor: #222222
+!xlogin*foreground: darkgreen
+xlogin*greetColor: #00ffff
+xlogin*failColor: red
+xlogin*Foreground: #00ffff
+xlogin*Background: #000000
+#endif
+
+
+
+
+!!XConsole.text.geometry:	480x130
+!!XConsole.verbose:	true
+!!XConsole*iconic:	true
+!!XConsole*font:		fixed
+
+Chooser*geometry:		350x250+150+100
+Chooser*allowShellResize:	false
+Chooser*viewport.forceBars:	true
+Chooser*label.font:		*-new century schoolbook-bold-i-normal-*-240-*
+Chooser*label.label:		XDMCP Host Menu from CLIENTHOST
+Chooser*list.font:		-*-*-medium-r-normal-*-*-230-*-*-c-*-iso8859-1
+Chooser*Command.font:		*-new century schoolbook-bold-r-normal-*-180-*
+
+
+!*.background: #010101
+!*.foreground: #55555
+
+
