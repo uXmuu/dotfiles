@@ -1,0 +1,10 @@
+
+
+
+
+x11-base/xorg-server -selinux -test -xvfb -debug -elogind-systemd -suid -fonts
+
+sys-fs/udev -selinux -test
+
+x11-terms/rxvt-unicode -blink -font-styles -iso14755 -perl -xft 256-color
+
