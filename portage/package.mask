@@ -1,0 +1,2 @@
+>dev-libs/msgpack:0=
+>dev-libs/msgpack **
